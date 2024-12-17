@@ -37,7 +37,7 @@ def vitoria_horizontal(matriz):
             print('jogador_1 venceu!')
             exit() 
 
-        if matriz[i][0] == 'O' and matriz[i][1] == 'O' and matriz[i][2] == 'O': 
+        if matriz[0][i] == 'O' and matriz[1][i] == 'O' and matriz[2][i] == 'O': 
             print('jogador_2 venceu!')
             exit()
 
@@ -84,7 +84,8 @@ def main():
                     print('\nMovimento invalido!\n')
                     sleep(1)
                     limpar_tela()
-                    print('Vez do jogador 1\n')
+                    print_velha(matriz)
+                    print('\nVez do jogador 1\n')
     
                     l = int(input('Linha: '))
                     c = int(input('Coluna: '))      
@@ -104,7 +105,8 @@ def main():
                     print('\nMovimento invalido\n')
                     sleep(1)
                     limpar_tela()
-                    print('Vez do jogador 2\n')
+                    print_velha(matriz)
+                    print('\nVez do jogador 2\n')
                     l = int(input('Linha: '))
                     c = int(input('Coluna: '))      
                     continue
@@ -124,5 +126,5 @@ def main():
         vitoria_diagonal(matriz)
         limite_de_jogo(limite)
     
-if _name_ == '_main_':
+if __name__ == '__main__':
     main()
